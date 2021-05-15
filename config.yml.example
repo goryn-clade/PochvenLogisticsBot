@@ -1,0 +1,4 @@
+bot_token: 'a_discord_bot_token'
+substring_matches: 10
+channel_prefix: 'a_discord_channel_id'
+systems_list: './lib/system_names.txt'
