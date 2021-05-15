@@ -13,7 +13,6 @@ class PochvenBot
 
   def initialize
     @bot ||= Discordrb::Commands::CommandBot.new(token: config['bot_token'], prefix: prefix_proc)
-    @bot.debug = {}
   end
 
   def run
