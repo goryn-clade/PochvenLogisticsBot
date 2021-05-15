@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
-COPY run.rb config.yml lib ./
+COPY . .
 
 EXPOSE 5000
 
