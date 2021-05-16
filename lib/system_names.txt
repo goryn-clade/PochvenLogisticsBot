@@ -187,7 +187,7 @@ ardar
 ardene
 arderonne
 ardhis
-ardishapur prime
+ardishapur-prime
 arena
 arera
 arifsdald
@@ -368,7 +368,7 @@ carirgnottin
 carrou
 caslemon
 cat
-central point
+central-point
 chainelant
 chaktaren
 chamemi
@@ -427,7 +427,7 @@ daran
 daras
 dastryns
 datulen
-dead end
+dead-end
 decon
 deepari
 defsunun
@@ -452,7 +452,7 @@ doussivitte
 doza
 dresi
 droselory
-du annes
+du-annes
 dudreda
 dumkirinur
 dunraelare
@@ -923,7 +923,7 @@ jurlesel
 juunigaishi
 kaaputenen
 kadlina
-kador prime
+kador-prime
 kahah
 kaimon
 kaira
@@ -965,7 +965,7 @@ keshirou
 khabara
 khabi
 khafis
-khanid prime
+khanid-prime
 khankenirdia
 kheram
 khnar
@@ -989,7 +989,7 @@ komaa
 konora
 koona
 kooreng
-kor-azor prime
+kor-azor-prime
 korama
 korasen
 korridi
@@ -1052,7 +1052,7 @@ loguttur
 lor
 lossa
 lour
-lower debyl
+lower-debyl
 lulm
 lumegen
 luminaire
@@ -1218,8 +1218,8 @@ nema
 nennamaila
 nererut
 netsalakka
-new caldari
-new eden
+new-caldari
+new-eden
 ney
 neyi
 neziel
@@ -1295,7 +1295,7 @@ oisio
 okagaiken
 okkamon
 olbra
-old man star
+old-man-star
 olelon
 olettiers
 olfeim
@@ -1420,7 +1420,7 @@ postouvin
 pout
 pozirblant
 prism
-promised land
+promised-land
 psasa
 pserz
 pucherie
@@ -1524,7 +1524,7 @@ sarekuwa
 sarenemi
 sari
 sarline
-sarum prime
+sarum-prime
 sasiekko
 sasoutikh
 sassecho
@@ -1659,7 +1659,7 @@ tarta
 tartoken
 taru
 tasabeshi
-tash-murkon prime
+tash-murkon-prime
 tastela
 tasti
 tegheon
@@ -1754,7 +1754,7 @@ uoyonen
 uphallant
 uphene
 uplingur
-upper debyl
+upper-debyl
 upt
 uriok
 urlen

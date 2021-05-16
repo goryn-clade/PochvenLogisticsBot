@@ -8,8 +8,12 @@ class PochvenBot
   USAGE     = 'pochven jita'.freeze
   MANY      = 'Too many matches for '.freeze
   SPECIFIC  = ', try to be more specific!'.freeze
-  CANNOT    = 'Cannot find '.freeze
-  ONEOF     = ', did you mean one of: '
+  CANNOT    = 'Cannot find system '.freeze
+  ONEOF     = ', did you mean one of: '.freeze
+  SPELLING  = ', check your spelling and try again'.freeze
+  HELP      = ".\n**The Pochven Bot posts the pochven exit map for a requested system.**\n • Use it like `!pochven jita`, to get the map for jita.\n • See pinned posts for Kadesh\'s guide on how to read the maps".freeze
+  SPACE     = Regexp.new(/\ /).freeze
+  DASH      = '-'.freeze
 
   def initialize
     @bot ||= Discordrb::Commands::CommandBot.new(token: config['bot_token'], prefix: prefix_proc)
@@ -17,7 +21,11 @@ class PochvenBot
 
   def run
     @bot.command(:pochven, description: DESC,
-          usage: USAGE, min_args: 1) do |event, system_name|
+          usage: USAGE, min_args: 1) do |event, arg1, arg2, arg3|
+
+      system_name = [arg1,arg2,arg3].compact.join('-').downcase.gsub(SPACE, DASH)
+      
+      next HELP if system_name == 'help'
 
       unless valid_systems.include? system_name
         possibilities = valid_systems.find_all { |s| s =~ /#{system_name}/}
@@ -26,8 +34,10 @@ class PochvenBot
         else
           if possibilities.size > config['substring_matches']
             next "#{MANY}`#{system_name}`#{SPECIFIC}"
-          else
+          elsif possibilities.size > 0
             next "#{CANNOT}`#{system_name}`#{ONEOF}`#{possibilities.join(', ')}`"
+          else
+            next "#{CANNOT}`#{system_name}`#{SPELLING}"
           end
         end
       else
