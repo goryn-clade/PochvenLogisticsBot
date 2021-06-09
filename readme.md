@@ -2,7 +2,7 @@
 
 A simple bot for posting pochven logistics maps to discord, built with [discordrb](https://github.com/shardlab/discordrb) 
 
-The maps are provided by Kadesh Priestess and details on how they work can be found in his excellent [Logistics via Pochven](https://docs.google.com/document/d/1Cllc7yWghQm52wZ2wFqn1e_Ule2KbNQtQuPNrP_TiHU/edit) document
+The maps are provided by **Kadesh Priestess** and details on how they work can be found in his excellent [Logistics via Pochven](https://docs.google.com/document/d/1Cllc7yWghQm52wZ2wFqn1e_Ule2KbNQtQuPNrP_TiHU/edit) document
 
 
 ---
