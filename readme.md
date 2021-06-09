@@ -1,8 +1,8 @@
-# PochvenBot
+# Pochven Logistics Bot for Eve Online
 
-A bot for posting pochven maps to discord on demand, built with [discordrb](https://github.com/shardlab/discordrb) 
+A simple bot for posting pochven logistics maps to discord, built with [discordrb](https://github.com/shardlab/discordrb) 
 
-Maps are provided by Kadesh Priestess and details on how they work can be found in his excellent [Logistics via Pochven](https://docs.google.com/document/d/1Cllc7yWghQm52wZ2wFqn1e_Ule2KbNQtQuPNrP_TiHU/edit) document
+The maps are provided by Kadesh Priestess and details on how they work can be found in his excellent [Logistics via Pochven](https://docs.google.com/document/d/1Cllc7yWghQm52wZ2wFqn1e_Ule2KbNQtQuPNrP_TiHU/edit) document
 
 
 ---
@@ -15,9 +15,11 @@ Invoke the bot with a system name and it will find the relevant map and embed it
 ![usage_example](https://i.imgur.com/2FJi08V.png)
 
 ---
-## Installation
+## Setup
 
-### Create a bot
+The Pochven Logistics Bot is intended as a base for you to run your own privately hosted bot. 
+
+### 1. Create a bot
 
 - Go to [Discord Developer Portal](https://discord.com/developers/applications) and create a new application. 
 - Under the "Bot" tab, hit the "Add Bot" button to turn your new application into a bot.
@@ -25,7 +27,7 @@ Invoke the bot with a system name and it will find the relevant map and embed it
 - On the Oauth2 tab check the "Bot" permission under "Scopes", and under "Bot Permissions" check "Write messages", "Embed Links" and "Read Message History"
 - Copy the generated Oauth2 scope and paste it into your browser, this will allow you to invite your new bot to your server (must be an admin)
 
-### Config.yml
+###  2. Create a config.yml
 
 The config has a few fields that you will need to enter yourself, use the `config.yml.example` to create your own `config.yml`
 
@@ -36,7 +38,7 @@ The config has a few fields that you will need to enter yourself, use the `confi
 - `cdn_base` - Specifies the base URL for the map images. Maps are hosted by Goryn Clade, but you can change this if you want to use your own maps 
 
 
-### Usage
+### 3. Run it
 - After your config has been created you can run the containers with `docker-compose run -d --build`
 - In the specified channels you can now call the bot to embed maps like `!pochven jita`
 
