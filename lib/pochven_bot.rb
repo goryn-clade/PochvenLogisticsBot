@@ -3,6 +3,7 @@ require 'yaml'
 
 class PochvenBot
   CONFIG    = './config.yml'.freeze
+  SYSTEMS   = './lib/system_names.txt'.freeze
   PNG       = '.png'.freeze
   DESC      = 'show me a map'.freeze
   USAGE     = 'pochven jita'.freeze
@@ -63,13 +64,11 @@ class PochvenBot
   end
 
   def prefixes
-    @prefixes ||= {
-      config['channel_prefix'] => '!'
-    }
+    @prefixes ||= config['channels'].map { |id| [id,config['prefix']] }.to_h
   end
 
   def valid_systems
-    @valid_systems ||= File.open(config['systems_list']).map {|l| l.strip}
+    @valid_systems ||= File.open(SYSTEMS).map {|l| l.strip}
   end  
 
   def img_url(system_name)
