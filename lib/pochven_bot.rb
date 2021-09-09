@@ -21,7 +21,7 @@ class PochvenBot
   end
 
   def run
-    @bot.command(:pochven, description: DESC,
+    @bot.command(:p, description: DESC,
           usage: USAGE, min_args: 1) do |event, arg1, arg2, arg3|
 
       system_name = [arg1,arg2,arg3].compact.join('-').downcase.gsub(SPACE, DASH)
