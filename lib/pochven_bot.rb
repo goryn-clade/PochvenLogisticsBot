@@ -12,7 +12,7 @@ class PochvenBot
   CANNOT    = 'Cannot find system '.freeze
   ONEOF     = ', did you mean one of: '.freeze
   SPELLING  = ', check your spelling and try again'.freeze
-  HELP      = ".\n**The Pochven Bot posts the pochven exit map for a requested system.**\n • Use it like `!pochven jita`, to get the map for jita.\n • See pinned posts for Kadesh\'s guide on how to read the maps".freeze
+  HELP      = ".\n**The Pochven Bot posts the pochven exit map for a requested system.**\n • Use it like `!p jita`, to get the map for jita.\n • See pinned posts for Kadesh\'s guide on how to read the maps".freeze
   SPACE     = Regexp.new(/\ /).freeze
   DASH      = '-'.freeze
 
