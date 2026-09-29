@@ -48,7 +48,7 @@ The config has fields that you will need to provide your own values for, use the
 
 
 ### 3. Run it
-- After your config has been created you can run the containers with `docker-compose run -d --build`
+- After your config has been created you can run the containers with `docker compose up -d --build`
 - The bot can be run outside of docker with `bundle install && ruby run.rb` 
 - In the specified channels you can now call the bot to embed maps like `!pochven jita`
 

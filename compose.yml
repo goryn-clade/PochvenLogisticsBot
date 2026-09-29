@@ -1,7 +1,7 @@
-version: "3.8"
+name: pochvenbot
 
 services:
   pochvenbot:
     build: '.'
     container_name: pochvenbot
-    restart: always
+    restart: unless-stopped
