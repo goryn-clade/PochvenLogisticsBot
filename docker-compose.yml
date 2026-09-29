@@ -3,7 +3,5 @@ version: "3.8"
 services:
   pochvenbot:
     build: '.'
-    container_name: pochvenbot    
-    ports:
-      - 5000:5000
+    container_name: pochvenbot
     restart: always

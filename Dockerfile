@@ -8,6 +8,4 @@ RUN bundle install
 
 COPY . .
 
-EXPOSE 5000
-
 CMD ["ruby", "./run.rb"]
