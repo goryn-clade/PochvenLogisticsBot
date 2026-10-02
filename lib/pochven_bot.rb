@@ -16,12 +16,14 @@ class PochvenBot
   # System names only use these characters. Stripping everything else keeps
   # markdown and mentions out of replies.
   INVALID   = /[^a-z0-9-]/.freeze
+  # discordrb 3.8 has no name for this intent, so pass its bit.
+  MESSAGE_CONTENT = 1 << 15
 
   def initialize
     # Only the intents the bot uses. The default (:all) asks for privileged
     # intents the application is not approved for, and Discord refuses it.
     @bot ||= Discordrb::Commands::CommandBot.new(token: config['bot_token'], prefix: prefix_proc,
-                                                 intents: [:servers, :server_messages, :message_content])
+                                                 intents: [:servers, :server_messages, MESSAGE_CONTENT])
   end
 
   def run
