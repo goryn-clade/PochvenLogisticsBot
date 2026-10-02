@@ -18,7 +18,10 @@ class PochvenBot
   INVALID   = /[^a-z0-9-]/.freeze
 
   def initialize
-    @bot ||= Discordrb::Commands::CommandBot.new(token: config['bot_token'], prefix: prefix_proc)
+    # Only the intents the bot uses. The default (:all) asks for privileged
+    # intents the application is not approved for, and Discord refuses it.
+    @bot ||= Discordrb::Commands::CommandBot.new(token: config['bot_token'], prefix: prefix_proc,
+                                                 intents: [:servers, :server_messages, :message_content])
   end
 
   def run
