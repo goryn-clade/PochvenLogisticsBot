@@ -13,8 +13,9 @@ class PochvenBot
   ONEOF     = ', did you mean one of: '.freeze
   SPELLING  = ', check your spelling and try again'.freeze
   HELP      = ".\n**The Pochven Bot posts the pochven exit map for a requested system.**\n • Use it like `!p jita`, to get the map for jita.\n • See pinned posts for Kadesh\'s guide on how to read the maps".freeze
-  SPACE     = Regexp.new(/\ /).freeze
-  DASH      = '-'.freeze
+  # System names only use these characters. Stripping everything else keeps
+  # markdown and mentions out of replies.
+  INVALID   = /[^a-z0-9-]/.freeze
 
   def initialize
     @bot ||= Discordrb::Commands::CommandBot.new(token: config['bot_token'], prefix: prefix_proc)
@@ -24,12 +25,12 @@ class PochvenBot
     @bot.command(:p, description: DESC,
           usage: USAGE, min_args: 1) do |event, arg1, arg2, arg3|
 
-      system_name = [arg1,arg2,arg3].compact.join('-').downcase.gsub(SPACE, DASH)
-      
-      next HELP if system_name == 'help'
+      system_name = [arg1,arg2,arg3].compact.join('-').downcase.tr(' ', '-').gsub(INVALID, '')
+
+      next HELP if system_name == 'help' || system_name.empty?
 
       unless valid_systems.include? system_name
-        possibilities = valid_systems.find_all { |s| s =~ /#{system_name}/}
+        possibilities = valid_systems.find_all { |s| s.include? system_name }
         if possibilities.size == 1
           selected_system = possibilities[0] 
         else
@@ -54,8 +55,8 @@ class PochvenBot
 
   def prefix_proc
     @prefix_proc ||= proc do |message|
-      prefix = prefixes[message.channel.id] || '.'
-      message.content[prefix.size..-1] if message.content.start_with?(prefix)
+      prefix = prefixes[message.channel.id]
+      message.content[prefix.size..-1] if prefix && message.content.start_with?(prefix)
     end
   end
 
