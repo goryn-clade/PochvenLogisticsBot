@@ -1,6 +1,6 @@
-FROM ruby:3.0.1
+FROM ruby:4.0-slim
 
-RUN bundle config --global frozen 1
+RUN bundle config set --global frozen 1
 
 WORKDIR /usr/src/app
 COPY Gemfile Gemfile.lock ./

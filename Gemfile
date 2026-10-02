@@ -1,4 +1,3 @@
 source 'https://rubygems.org'
 
-gem 'discordrb'
-gem 'yaml'
+gem 'discordrb', '~> 3.8'
